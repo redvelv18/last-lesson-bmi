@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus adipisci provident eum doloribus qui,
+        doloremque similique ex. Eos voluptates placeat aut labore corporis rem earum totam provident ad architecto.
+        Ducimus ipsam beatae expedita molestiae cum illum rerum quasi saepe? Labore nihil tempore sint voluptatibus
+        excepturi deserunt autem quasi provident consequatur et repellendus, nemo quas veritatis quam iusto sit, sed vel
+        aliquid fugiat vero perferendis debitis. Deserunt, minus voluptate! Tempore, provident?</p>
+
+    <div class="container">
+        <h1>BMI Calc</h1>
+
+        <p>Height (in cm cuz i hate m)</p>
+        <input type="text" id="height" />
+        <p>Weight (in kg cause nobody does gr)</p>
+        <input type="text" id="weight" />
+        <button id="btn">Calculate</button>
+        <div id="result"></div>
+    </div>
+
+
+
+    <script>
+        let inputText = document.getElementsById("input-text");
+        let button = document.getElementsByName("button");
+
+
+        window.onload = () => {
+            let button = document.querySelector("#btn");
+            button.addEventListener("click", calculateBMI);
+        };
+
+        function calculateBMI() {
+
+            let height = parseInt(document
+                .querySelector("#height").value);
+            let weight = parseInt(document
+                .querySelector("#weight").value);
+            let result = document.querySelector("#result");
+
+            if (height === "" || isNaN(height))
+                result.innerHTML = "Not a weight";
+            else if (weight === "" || isNaN(weight))
+                result.innerHTML = "Not a weight";
+
+
+            else {
+                let bmi = (weight / ((height * height)
+                    / 10000)).toFixed(2);
+                if (bmi < 18.6) result.innerHTML =
+                    `SKINNY : ${bmi}`;
+                else if (bmi >= 18.6 && bmi < 24.9)
+                    result.innerHTML =
+                        `Normal : ${bmi}`;
+                else result.innerHTML =
+                    `OBCD : ${bmi}`;
+            }
+        }
+        let inputValue = inputText.value;
+
+        console.log(inputText.value);
+        parseInt(inputText.value); //converts str to int
+
+        function processClick() {
+            inputText.value;
+            let kmi = (aa / bb) * bb;
+            output.innerHTML = person[inputText.value];
+        }
+        button.addEventListener("click", processClick);
+    </script>
+</body>
+
+</html>
